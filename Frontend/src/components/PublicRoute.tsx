@@ -1,5 +1,5 @@
 // Import necessary libraries and types
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode } from "react";
 // import { useNavigate } from "react-router-dom";
 // import { LocalStorage } from "../utils";
 
