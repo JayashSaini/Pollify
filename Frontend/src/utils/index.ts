@@ -22,10 +22,12 @@ export const requestHandler = async (
     const response = await api();
     const { data } = response;
     if (data?.success) {
+      console.log("Data : " + data);
       // Call the onSuccess callback with the response data
       onSuccess(data);
     }
   } catch (error: any) {
+    console.log("Error occur : " + error);
     // Handle error cases, including unauthorized and forbidden cases
 
     if ([401, 403].includes(error?.response.data?.statusCode)) {
