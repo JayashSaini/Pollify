@@ -28,9 +28,16 @@ app.use(morgan('dev'));
 const userRouter = require('./routes/auth/user.routes.js');
 const pollRouter = require('./routes/poll.routes.js');
 const { ApiError } = require('./utils/ApiError.js');
+const { ApiResponse } = require('./utils/ApiResponse.js');
 
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/polls', pollRouter);
+
+app.get('/api/v1/healthcheck', (_, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, {}, 'Everything is working properly!'));
+});
 
 // if endpoint not found
 app.use((_, __, next) => {

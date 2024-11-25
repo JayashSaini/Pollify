@@ -60,6 +60,11 @@ const deletePollAPI = (pollId: string) => {
 const addVoteAPI = (pollId: string, optionId: string) => {
   return apiClient.post(`/polls/vote/${pollId}`, { optionId });
 };
+
+const healthCheckAPI = () => {
+  return apiClient.get("/healthcheck");
+};
+
 // Export all the API functions
 export {
   loginUser,
@@ -70,4 +75,5 @@ export {
   getPollByIdAPI,
   deletePollAPI,
   addVoteAPI,
+  healthCheckAPI,
 };
