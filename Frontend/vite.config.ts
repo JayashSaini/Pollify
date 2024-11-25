@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: process.env.VITE_BACKEND_URI,
+        target: "https://pollify-bnzq.onrender.com",
         changeOrigin: true,
         secure: false,
       },
