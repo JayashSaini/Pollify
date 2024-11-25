@@ -27,7 +27,7 @@ export const requestHandler = async (
       onSuccess(data);
     }
   } catch (error: any) {
-    console.log("Error occur : " + error);
+    console.log("Error occur : " + error?.response?.data);
     // Handle error cases, including unauthorized and forbidden cases
 
     // if ([401, 403].includes(error?.response.data?.statusCode)) {
